@@ -83,7 +83,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </router-link>
               </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link ">
               <i class="nav-icon fa fa-cog"></i>
               <p>
                Management
@@ -114,12 +114,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-power-off"></i>
-              <p>
-              Logout
-              </p>
+            <a class="nav-link" href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                          document.getElementById('logout-form').submit();">
+                          <i class="nav-icon fas fa-power-off"></i>
+                          <p>{{ __('Logout') }}</p>
             </a>
+
+         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+             @csrf
+         </form>
           </li>
         </ul>
       </nav>
@@ -154,10 +158,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Fredrick
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2014-2018 <a href="https://adminlte.io">Lara Start</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
